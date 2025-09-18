@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import "./Header.css";
@@ -52,10 +53,10 @@ const Header = () => {
         </div>
         <div className="dropdown">
           <ul>
-            <li>Profile</li>
-            <li>Registered</li>
-            <li>Interested</li>
-            <li>Achievements</li>
+            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/registered">Registered</Link></li>
+            <li><Link to="/interested"> Interested</Link></li>
+            <li><Link to="/achievements">Achievements</Link></li>
             <li>Leaderboard</li>
             <li>Settings</li>
             <li onClick={handleLogout} style={{ color: '#dc3545', cursor: 'pointer' }}>

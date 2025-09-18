@@ -7,7 +7,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Home from './components/Home_Page/Home';
 import Clubs from './pages/Clubs';
 import AdminPage from './AdminPage';
-
+import Profile from './components/Home_Page/Header/Profile';
+import Registered from './components/Home_Page/Header/Registered';
+import Interested from './components/Home_Page/Header/Interested';
+import Achievements from './components/Home_Page/Header/Achievements';
 function App() {
   // Use import.meta.env for client-side environment variables in Vite
   const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
@@ -32,6 +35,26 @@ function App() {
               <Route path="/clubs" element={
                 <ProtectedRoute>
                   <Clubs />
+                </ProtectedRoute>
+              } />
+              <Route path="/profile" element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              } />
+              <Route path="/registered" element={
+                <ProtectedRoute>
+                  <Registered />
+                </ProtectedRoute>
+              } />
+              <Route path="/interested" element={
+                <ProtectedRoute>
+                  <Interested />
+                </ProtectedRoute>
+              } />
+              <Route path="/achievements" element={
+                <ProtectedRoute>
+                  <Achievements />
                 </ProtectedRoute>
               } />
               <Route path="/admin" element={<AdminPage />} />

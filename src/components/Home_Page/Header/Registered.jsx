@@ -4,21 +4,23 @@ import "./registered.css";
 const events = [
   {
     id: 1,
-    image: "https://via.placeholder.com/100x150", // Replace with your event image URL
+    image: "https://via.placeholder.com/300x200",
     name: "Event Name 1",
     organizers: "Organizer 1",
     date: "DD/MM/YYYY",
     time: "HH:MM",
     venue: "Venue 1",
+    status: "Upcoming",
   },
   {
     id: 2,
-    image: "https://via.placeholder.com/100x150", // Replace with your event image URL
+    image: "https://via.placeholder.com/300x200",
     name: "Event Name 2",
     organizers: "Organizer 2",
     date: "DD/MM/YYYY",
     time: "HH:MM",
     venue: "Venue 2",
+    status: "Tomorrow",
   },
 ];
 
@@ -26,25 +28,51 @@ const Registered = () => {
   return (
     <div className="registered-container">
       <div className="registered-header">
-        <h2>REGISTERED</h2>
-        <div className="hamburger">&#9776;</div>
+        <h1>My Registered Events</h1>
+        <button className="menu-btn">
+          <span className="hamburger">&#9776;</span>
+        </button>
       </div>
 
-      {events.map((event) => (
-        <div key={event.id} className="event-card">
-          <img src={event.image} alt={event.name} className="event-image" />
+      <div className="events-grid">
+        {events.map((event) => (
+          <div key={event.id} className="event-card">
+            <div className="event-image-container">
+              <img src={event.image} alt={event.name} className="event-image" />
+              <span className="event-status">{event.status}</span>
+            </div>
 
-          <div className="event-details">
-            <p><strong>Event Name:</strong> {event.name}</p>
-            <p><strong>Organizers:</strong> {event.organizers}</p>
-            <p><strong>Date:</strong> {event.date}</p>
-            <p><strong>Time:</strong> {event.time}</p>
-            <p><strong>Venue:</strong> {event.venue}</p>
+            <div className="event-details">
+              <h2 className="event-name">{event.name}</h2>
+              <div className="event-info">
+                <div className="info-item">
+                  <i className="fas fa-users"></i>
+                  <span>{event.organizers}</span>
+                </div>
+                <div className="info-item">
+                  <i className="fas fa-calendar"></i>
+                  <span>{event.date}</span>
+                </div>
+                <div className="info-item">
+                  <i className="fas fa-clock"></i>
+                  <span>{event.time}</span>
+                </div>
+                <div className="info-item">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <span>{event.venue}</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              className="notification-btn"
+              title="Toggle notifications"
+            >
+              <i className="fas fa-bell"></i>
+            </button>
           </div>
-
-          <div className="notification-bell">🔔</div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
