@@ -1,0 +1,65 @@
+.registered-container {
+  background: linear-gradient(135deg, #d3d3d3, #a9a9a9);
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.registered-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.registered-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Event Card */
+.event-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Event Image */
+.event-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border: 6px solid #004d40;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+/* Event Details */
+.event-details {
+  flex: 1;
+}
+
+.event-details p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+/* Notification Bell */
+.notification-bell {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}

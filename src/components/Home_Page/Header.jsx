@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
 
   return (
@@ -37,13 +36,11 @@ const Header = () => {
         )}
       </div>
 
-      {/* Hamburger Menu */}
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
-
-      {/* Dropdown */}
-      {menuOpen && (
+      {/* Hamburger Menu with Dropdown */}
+      <div className="menu-container">
+        <div className="menu-icon">
+          ☰
+        </div>
         <div className="dropdown">
           <ul>
             <li>Profile</li>
@@ -54,7 +51,7 @@ const Header = () => {
             <li>Settings</li>
           </ul>
         </div>
-      )}
+      </div>
     </header>
     
   );

@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 import Signup from './SignupPage/Signup';
 import ProtectedRoute from './components/ProtectedRoute'; 
 import Home from './components/Home_Page/Home';
+
 function App() {
   // Use import.meta.env for client-side environment variables in Vite
   const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
