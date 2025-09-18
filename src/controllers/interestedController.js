@@ -1,6 +1,29 @@
 import Interested from '../Models/Interested.js';
 import User from '../Models/User.js';
 
+// Get all interests (for admin dashboard)
+export const getAllInterests = async (req, res) => {
+    try {
+        const interests = await Interested.find({})
+            .sort({ interestedAt: -1 })
+            .populate('userId', 'name email imageUrl');
+
+        res.status(200).json({
+            success: true,
+            count: interests.length,
+            interests: interests
+        });
+
+    } catch (error) {
+        console.error('Error fetching all interests:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to fetch interests data',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
+};
+
 // Save user interest in a club
 export const saveInterest = async (req, res) => {
     try {

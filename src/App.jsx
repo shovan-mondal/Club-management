@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -6,7 +5,9 @@ import { AuthProvider } from './context/AuthContext';
 import Signup from './SignupPage/Signup';
 import ProtectedRoute from './components/ProtectedRoute'; 
 import Home from './components/Home_Page/Home';
-import Clubs from './pages/Clubs'
+import Clubs from './pages/Clubs';
+import AdminPage from './AdminPage';
+
 function App() {
   // Use import.meta.env for client-side environment variables in Vite
   const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
@@ -33,6 +34,7 @@ function App() {
                   <Clubs />
                 </ProtectedRoute>
               } />
+              <Route path="/admin" element={<AdminPage />} />
               <Route path="/" element={<Signup />} /> 
             </Routes>
           </div>

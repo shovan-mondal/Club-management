@@ -110,7 +110,7 @@ const Clubs = () => {
 
       console.log('Sending request with data:', requestBody);
 
-      const response = await fetch('http://localhost:3001/api/interested/save', {
+      const response = await fetch('http://localhost:3001/api/interests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

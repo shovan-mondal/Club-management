@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import "./Header.css";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <header className="header">
@@ -37,6 +46,15 @@ const Header = () => {
         )}
       </div>
 
+      {/* Logout Button */}
+      <button 
+        className="logout-btn"
+        onClick={handleLogout}
+        title="Logout"
+      >
+        Logout
+      </button>
+
       {/* Hamburger Menu */}
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
@@ -52,6 +70,9 @@ const Header = () => {
             <li>Achievements</li>
             <li>Leaderboard</li>
             <li>Settings</li>
+            <li onClick={handleLogout} style={{ color: '#dc3545', cursor: 'pointer' }}>
+              Logout
+            </li>
           </ul>
         </div>
       )}

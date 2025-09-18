@@ -3,10 +3,14 @@ import {
     saveInterest, 
     getUserInterests, 
     getClubInterests, 
-    removeInterest 
+    removeInterest,
+    getAllInterests
 } from '../controllers/interestedController.js';
 
 const router = express.Router();
+
+// GET /api/interests - Get all interests (for admin)
+router.get('/', getAllInterests);
 
 // POST /api/interests - Save user interest in a club
 router.post('/', saveInterest);
