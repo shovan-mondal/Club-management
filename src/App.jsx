@@ -5,6 +5,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AuthProvider } from './context/AuthContext';
 import Signup from './SignupPage/Signup';
 import Home from './Home';
+import Clubs from './pages/Clubs';
 import ProtectedRoute from './components/ProtectedRoute'; 
 
 function App() {
@@ -26,6 +27,11 @@ function App() {
               <Route path="/home" element={
                 <ProtectedRoute>
                   <Home />
+                </ProtectedRoute>
+              } />
+              <Route path="/clubs" element={
+                <ProtectedRoute>
+                  <Clubs />
                 </ProtectedRoute>
               } />
               <Route path="/" element={<Signup />} /> 

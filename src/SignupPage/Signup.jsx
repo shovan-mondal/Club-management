@@ -25,7 +25,7 @@ function Signup() {
 
     // Send token to backend to store/retrieve user
     try {
-      const response = await fetch('http://localhost:5001/api/auth/google', {
+      const response = await fetch('http://localhost:3001/api/auth/google', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

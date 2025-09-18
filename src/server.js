@@ -44,7 +44,10 @@ app.get('/', (req, res) => {
         endpoints: {
             health: '/api/health',
             auth: '/api/auth/google',
-            userProfile: '/api/auth/user/:userId'
+            userProfile: '/api/auth/user/:userId',
+            interests: '/api/interests',
+            userInterests: '/api/interests/user/:userId',
+            clubInterests: '/api/interests/club/:clubName'
         }
     });
 });
@@ -69,9 +72,9 @@ app.use((req, res) => {
 });
 
 // Server startup
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3001;
 
-const server = app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '127.0.0.1', () => {
     console.log(`✓ Server running on http://localhost:${PORT}`);
     console.log(`✓ Server accessible at http://127.0.0.1:${PORT}`);
     console.log(`✓ Environment: ${process.env.NODE_ENV || 'development'}`);
