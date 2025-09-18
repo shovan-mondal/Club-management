@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import "./Header.css";
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const navigate = useNavigate();
   const { logout } = useAuth();
@@ -46,22 +45,11 @@ const Header = () => {
         )}
       </div>
 
-      {/* Logout Button */}
-      <button 
-        className="logout-btn"
-        onClick={handleLogout}
-        title="Logout"
-      >
-        Logout
-      </button>
-
-      {/* Hamburger Menu */}
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
-
-      {/* Dropdown */}
-      {menuOpen && (
+      {/* Hamburger Menu with Dropdown */}
+      <div className="menu-container">
+        <div className="menu-icon">
+          ☰
+        </div>
         <div className="dropdown">
           <ul>
             <li>Profile</li>
@@ -75,7 +63,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-      )}
+      </div>
     </header>
     
   );

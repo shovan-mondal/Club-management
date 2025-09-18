@@ -1,0 +1,81 @@
+.achievements-container {
+  background: linear-gradient(135deg, #2d3a3a, #1f2b2b);
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Header */
+.achievements-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title .medal {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.achievements-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Achievement Card */
+.achievement-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-info p {
+  margin: 0.2rem 0;
+  color: #fff;
+}
+
+/* Download Button */
+.download-btn {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:hover {
+  background-color: #ffd633;
+}

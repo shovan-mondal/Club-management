@@ -1,0 +1,77 @@
+.interested-container {
+  background: linear-gradient(135deg, #d3d3d3, #a9a9a9);
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.interested-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.interested-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Grid Layout */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Event Card */
+.event-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Image wrapper (for badge) */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Event Image */
+.event-image {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border: 6px solid #004d40;
+  border-radius: 8px;
+}
+
+/* Event Text */
+.event-text {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background: gold;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: rotate(-10deg);
+}
